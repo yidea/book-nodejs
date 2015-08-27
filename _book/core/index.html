@@ -1,0 +1,368 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>Nodejs Fundamental | Node.js</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.0.0-beta.1">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+        
+    
+    
+    <link rel="next" href="../core/control-flow.html" />
+    
+    
+    <link rel="prev" href="../index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    <div class="book" data-level="1" data-basepath=".." data-revision="Thu Aug 27 2015 12:16:41 GMT-0700 (PDT)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1" data-path="core/index.html">
+            
+                
+                    <a href="../core/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Nodejs Fundamental
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="core/control-flow.html">
+            
+                
+                    <a href="../core/control-flow.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Core - Control Flow &amp; Async Callback
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="core/global.html">
+            
+                
+                    <a href="../core/global.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Core - Global Objects
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="core/eventEmitter.html">
+            
+                
+                    <a href="../core/eventEmitter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Core - EventEmitter
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="core/stream.html">
+            
+                
+                    <a href="../core/stream.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        Core - Stream
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="core/filesystem.html">
+            
+                
+                    <a href="../core/filesystem.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        Core - FS
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="core/npm.html">
+            
+                
+                    <a href="../core/npm.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        NPM
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="Todo.html">
+            
+                
+                    <a href="../Todo.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Todo
+                    </a>
+                
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">Published with GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Share on Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Share on Google</button>
+                <button type="button" data-sharing="facebook" class="button">Share on Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Share on Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Share on Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Node.js</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="node-fundamental">Node Fundamental</h1>
+<h3 id="how-node-js-works">How Node.js works</h3>
+<p><img src="https://dl.dropboxusercontent.com/u/14122618/imgs/nodejs_core.jpg" alt="nodejs core"></p>
+<pre><code>Node.js Core lib API http://nodejs.org/api/ (e.g. module,stream,fs)
+                  |
+Node.js Binding (C++ glue js cmd to V8/libuv)
+                  |
+libuv(C binary lib for Async I/O File/Network) + V8 (C++ for js compiler)
+</code></pre><p>Async File I/O example</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+<span class="hljs-comment">// fs.readFile -&gt; Binding for I/O related -&gt; libuv -&gt; create a thread w callback in Event Queue(async read file to a buffer, once done it exe the callback)</span>
+<span class="hljs-comment">// callback func runs via v8 + buffer as context</span>
+fs.readFile(<span class="hljs-string">&quot;.gitignore&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, data)</span> </span>{
+  <span class="hljs-keyword">if</span> (err) <span class="hljs-keyword">throw</span> err;
+  <span class="hljs-built_in">console</span>.log(data);
+});
+</code></pre>
+<h3 id="node-js-core-modules">Node.js Core modules</h3>
+<ul>
+<li>Global objects
+  process, console, timer</li>
+<li>I/O modules
+  fs, net, http modules</li>
+<li>EventEmitter</li>
+<li>an entity that handles and processes external events and converts them into callback invocations- allow Async, pub/sub system, Node.js extend dom event to server I/O</li>
+<li>cb is register to event queue, cb is executed when I/O is done</li>
+<li>event loop = event emitter + callback</li>
+<li>event loop is only used to determine what do next when the execution of your code finishes (not good for CPU-bound task)</li>
+</ul>
+<p>How event loop works <a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ" target="_blank">https://www.youtube.com/watch?v=8aGhZQkoFbQ</a>
+*/
+setTimeout(function () { //async
+  console.log(new Date().getTime());
+});</p>
+<p>/* 2 Callback</p>
+<ul>
+<li>At an I/O call, your code saves the callback and returns control to the runtime environment. The callback will be called later when the data actually is available.</li>
+<li>Callback hell: nested callback depends on each other</li>
+<li>Callback hell Solution:
+  code in a small modular way
+  series, parallel <a href="http://book.mixu.net/node/ch7.html" target="_blank">http://book.mixu.net/node/ch7.html</a>
+  event emitter
+  generator (thunk - a function that returns a callback)
+  promise: use Q, rsvp
+  <a href="http://spion.github.io/posts/why-i-am-switching-to-promises.html" target="_blank">http://spion.github.io/posts/why-i-am-switching-to-promises.html</a></li>
+</ul>
+<h1 id="2-5-promise">2.5 Promise</h1>
+<p>ES6 have Promise as control flow for async to solve callback hell by add .then</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../core/control-flow.html" class="navigation navigation-next " aria-label="Next page: Core - Control Flow &amp; Async Callback"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-jsbin/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

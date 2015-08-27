@@ -1,0 +1,7 @@
+{
+  "name": "Nodejs_Cookbook",
+  "version": "0.0.1",
+  "dependencies": {
+    "gitbook-plugin-jsbin": "*"
+  }
+}

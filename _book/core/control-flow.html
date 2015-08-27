@@ -1,0 +1,412 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>Core - Control Flow &amp; Async Callback | Node.js</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.0.0-beta.1">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+        
+    
+    
+    <link rel="next" href="../core/global.html" />
+    
+    
+    <link rel="prev" href="../core/index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    <div class="book" data-level="1.1" data-basepath=".." data-revision="Thu Aug 27 2015 12:16:41 GMT-0700 (PDT)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="core/index.html">
+            
+                
+                    <a href="../core/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Nodejs Fundamental
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.1" data-path="core/control-flow.html">
+            
+                
+                    <a href="../core/control-flow.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Core - Control Flow &amp; Async Callback
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="core/global.html">
+            
+                
+                    <a href="../core/global.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Core - Global Objects
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="core/eventEmitter.html">
+            
+                
+                    <a href="../core/eventEmitter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Core - EventEmitter
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="core/stream.html">
+            
+                
+                    <a href="../core/stream.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        Core - Stream
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="core/filesystem.html">
+            
+                
+                    <a href="../core/filesystem.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        Core - FS
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="core/npm.html">
+            
+                
+                    <a href="../core/npm.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        NPM
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="Todo.html">
+            
+                
+                    <a href="../Todo.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Todo
+                    </a>
+                
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">Published with GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Share on Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Share on Google</button>
+                <button type="button" data-sharing="facebook" class="button">Share on Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Share on Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Share on Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Node.js</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="control-flow-async-callback">Control Flow &amp; Async Callback</h1>
+<p>The nature of Async callback in Node.js, makes the node.js code hard to read - <a href="http://callbackhell.com/" target="_blank">Callback Hell</a></p>
+<pre><code class="lang-js"><span class="hljs-comment">//example of callback hell</span>
+doAsync1(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+  doAsync2(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    doAsync3(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+      doAsync4(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    })
+  })
+})
+</code></pre>
+<h3 id="callback-node-js-core-api-by-default-use-callback">Callback (Node.js core API by default use callback)</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> updateUser = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(id, attributes, callback)</span> </span>{
+  User.findOne(id, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(err, user)</span> </span>{
+    <span class="hljs-keyword">if</span> (err) <span class="hljs-keyword">return</span> callback(err);
+    user.set(attributes);
+    user.save(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(err, updated)</span> </span>{
+      <span class="hljs-keyword">if</span> (err) <span class="hljs-keyword">return</span> callback(err);
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Updated&quot;</span>, updated);
+      callback(<span class="hljs-literal">null</span>, updated);
+    });
+  });
+});
+</code></pre>
+<h3 id="promise-es6-bluebird">Promise (ES6/Bluebird)</h3>
+<p>Promise make your async code style like sync <code>doAsync().then((data)=&gt;{})</code></p>
+<ul>
+<li>Read: <ul>
+<li>bluebird API <a href="https://github.com/petkaantonov/bluebird/blob/master/API.md" target="_blank">https://github.com/petkaantonov/bluebird/blob/master/API.md</a></li>
+<li>bluebird Cheatsheet <a href="http://ricostacruz.com/cheatsheets/bluebird.html" target="_blank">http://ricostacruz.com/cheatsheets/bluebird.html</a></li>
+<li><a href="http://www.2ality.com/2014/10/es6-promises-api.html" target="_blank">http://www.2ality.com/2014/10/es6-promises-api.html</a></li>
+<li><a href="https://www.promisejs.org/" target="_blank">https://www.promisejs.org/</a></li>
+<li><a href="https://strongloop.com/strongblog/node-js-callback-hell-promises-generators/" target="_blank">https://strongloop.com/strongblog/node-js-callback-hell-promises-generators/</a></li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> Promise = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;bluebird&quot;</span>);
+<span class="hljs-keyword">var</span> request = Promise.promisify(<span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;request&quot;</span>));
+<span class="hljs-keyword">var</span> fs = Promise.promisify(<span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>));<span class="hljs-comment">//since Node.js core module is using callback by default, need wrap w bluebird promise</span>
+fs.readFileAsync(<span class="hljs-string">&quot;file.json&quot;</span>).then(<span class="hljs-built_in">JSON</span>.parse)
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(val)</span> </span>{
+    <span class="hljs-keyword">return</span> val;
+  })
+  .catch(<span class="hljs-built_in">SyntaxError</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> </span>{
+    <span class="hljs-built_in">console</span>.error(<span class="hljs-string">&quot;invalid json in file&quot;</span>);
+  });
+
+<span class="hljs-comment">//parallel operation (use .all for dynamic array of promise, use .join for known # of promise)</span>
+Promise.all([asynchronousOperation(), asynchronousOperation()])
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(vals)</span> </span>{
+      vals.forEach(<span class="hljs-built_in">console</span>.log); <span class="hljs-comment">//[{}, {}]</span>
+      <span class="hljs-keyword">return</span> vals;
+  });
+</code></pre>
+<h3 id="generator">Generator</h3>
+<p>Generator is introduced in ES6</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> doAsyncOp = Q.async(<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-params">()</span> </span>{ <span class="hljs-comment">//* indicate it&apos;s generator</span>
+  <span class="hljs-keyword">var</span> val = <span class="hljs-keyword">yield</span> asynchronousOperation(); <span class="hljs-comment">//yield async fn = promise.then</span>
+  <span class="hljs-built_in">console</span>.log(val);
+  <span class="hljs-keyword">return</span> val;
+});
+</code></pre>
+<h3 id="es7-async-await">ES7 async/await</h3>
+<p>Promise helped us get out of callback hell somewhat, but still need callback for <code>promise.then(funciton(val){})</code>, async can help you remove callback and return further.</p>
+<p>When you define a function <code>async</code>, it indicates it returns a promise. If the promise resolves <code>await</code>, we can immediately interact with it on the next line, . And if it rejects, then an error is thrown. So try/catch actually works again</p>
+<ul>
+<li>async function //will return a promise obj</li>
+<li>await func() //just like .then() but without callback, Use await to wait for a Promise and its resolution value, equal to yield in generator, or promise.then(function(data){})</li>
+<li>try/catch to replace then/catch</li>
+<li>still can use ls().then/catch, essentially async fn is returning promise</li>
+</ul>
+<pre><code class="lang-js">async <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doAsyncOp</span> <span class="hljs-params">()</span> </span>{ <span class="hljs-comment">//= new Promise((resolve)=&gt;{resolve()}))</span>
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">let</span> filenames = await fs.promise.readdir(__dirname); <span class="hljs-comment">//.then</span>
+    <span class="hljs-keyword">let</span> data = await asynchronousOperation(filenames); <span class="hljs-comment">//.then</span>
+    <span class="hljs-built_in">console</span>.log(data)
+  } <span class="hljs-keyword">catch</span> (err) { <span class="hljs-comment">//handling reject w try catch instead of .catch(function(err){})</span>
+    <span class="hljs-built_in">console</span>.err(err);
+  }    
+};
+
+<span class="hljs-comment">//parallel operation</span>
+async <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doAsyncOp</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> vals = await Promise.all([asynchronousOperation(), asynchronousOperation()]);
+    vals.forEach(<span class="hljs-built_in">console</span>.log.bind(<span class="hljs-built_in">console</span>));
+    <span class="hljs-keyword">return</span> vals;
+};
+</code></pre>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="http://www.sitepoint.com/simplifying-asynchronous-coding-es7-async-functions/" target="_blank">http://www.sitepoint.com/simplifying-asynchronous-coding-es7-async-functions/</a></li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../core/index.html" class="navigation navigation-prev " aria-label="Previous page: Nodejs Fundamental"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../core/global.html" class="navigation navigation-next " aria-label="Next page: Core - Global Objects"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-jsbin/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

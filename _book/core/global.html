@@ -1,0 +1,440 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>Core - Global Objects | Node.js</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.0.0-beta.1">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+        
+    
+    
+    <link rel="next" href="../core/eventEmitter.html" />
+    
+    
+    <link rel="prev" href="../core/control-flow.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    <div class="book" data-level="1.2" data-basepath=".." data-revision="Thu Aug 27 2015 12:16:41 GMT-0700 (PDT)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="core/index.html">
+            
+                
+                    <a href="../core/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Nodejs Fundamental
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="core/control-flow.html">
+            
+                
+                    <a href="../core/control-flow.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Core - Control Flow &amp; Async Callback
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="core/global.html">
+            
+                
+                    <a href="../core/global.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Core - Global Objects
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="core/eventEmitter.html">
+            
+                
+                    <a href="../core/eventEmitter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Core - EventEmitter
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="core/stream.html">
+            
+                
+                    <a href="../core/stream.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        Core - Stream
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="core/filesystem.html">
+            
+                
+                    <a href="../core/filesystem.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        Core - FS
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="core/npm.html">
+            
+                
+                    <a href="../core/npm.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        NPM
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="Todo.html">
+            
+                
+                    <a href="../Todo.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Todo
+                    </a>
+                
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">Published with GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Share on Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Share on Google</button>
+                <button type="button" data-sharing="facebook" class="button">Share on Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Share on Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Share on Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Node.js</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="node-js-global-objects">Node.js Global Objects</h1>
+<p>Global objects are available in all nodejs modules. <a href="http://nodejs.org/api/globals.html#globals_global" target="_blank">http://nodejs.org/api/globals.html#globals_global</a></p>
+<ul>
+<li>module - organize components in modular way e.g. npm module</li>
+<li>process - communicate with OS</li>
+<li>console - logging message</li>
+<li>Buffer - support for binary data</li>
+</ul>
+<h3 id="module-require">Module &amp; Require</h3>
+<ul>
+<li><p><code>require(&quot;module&quot;)</code> and cached singleton
+  Commonjs Modules are cached after first time required(), second call will return the same object (singleton).
+  Rare cases you might want to deleted module cache by <code>delete require.cache[require.resolve(&apos;./myclass&apos;)]; //require.resolve() will return a fully expanded filename</code></p>
+<pre><code class="lang-js">  <span class="hljs-keyword">var</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;express&quot;</span>); <span class="hljs-comment">//without ./, node will search module  in local./node_modules first, then global/node_modules, if find create cached singleton</span>
+  <span class="hljs-keyword">var</span> foo = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./lib/foo&quot;</span>); <span class="hljs-comment">//relative path, can ignore .js extension</span>
+</code></pre>
+</li>
+<li><p>module.exports
+  you can export object/function/class as module API</p>
+</li>
+</ul>
+<pre><code class="lang-js">funciton MyClass () {}
+<span class="hljs-built_in">module</span>.exports = MyClass; <span class="hljs-comment">//new require(&quot;./module&quot;)</span>
+<span class="hljs-built_in">module</span>.exports = {get: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{<span class="hljs-keyword">return</span> <span class="hljs-string">&quot;ok&quot;</span>;}}; <span class="hljs-comment">//require(&quot;./module&quot;).get()</span>
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{ <span class="hljs-comment">//require(&quot;./module&quot;)()</span>
+  <span class="hljs-keyword">var</span> obj = {};
+  <span class="hljs-keyword">return</span> obj;
+};
+</code></pre>
+<h3 id="process">Process</h3>
+<p><code>process</code> object is an <code>EventEmitter</code> can help you get data into or out of a nodejs program, communicate your nodejs program with OS in a standard I/O stream manner</p>
+<ul>
+<li><p>process.cwd(), <code>__filename</code>, <code>__dirname</code> to get location of current file in OS</p>
+<pre><code class="lang-js">  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;__filename&quot;</span>, __filename); <span class="hljs-comment">///Users/ycao2/walmart/github/codepath-nodejs/index.js</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;__dirname&quot;</span>, __dirname); <span class="hljs-comment">///Users/ycao2/walmart/github/codepath-nodejs</span>
+  <span class="hljs-keyword">var</span> template = path.join(__dirname, <span class="hljs-string">&quot;views&quot;</span>, <span class="hljs-string">&quot;view.html&quot;</span>); <span class="hljs-comment">//=dir/views/view.html, use path.join for </span>
+  cross platform url support
+</code></pre>
+</li>
+<li><p>Read/Wrtie w OS command-line
+  <strong>Standard streams</strong>: process.stdin, process.stdout &amp; process.stderr</p>
+<p>  <code>process.stdout</code> &amp; <code>process.stdin</code> are readable &amp; writable stream to stdin/stdout</p>
+<pre><code class="lang-js">  <span class="hljs-comment">//@ Example 1: </span>
+  <span class="hljs-comment">//Pipe command-line content as input for node program, then output to command-line</span>
+  <span class="hljs-comment">//cat mock.txt| babel-node index.js</span>
+  process.stdin.resume(); <span class="hljs-comment">//start reading stream &amp; prvent node exit</span>
+  process.stdin.setEncoding(<span class="hljs-string">&quot;utf8&quot;</span>);
+  process.stdin.on(<span class="hljs-string">&quot;data&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(text)</span> </span>{
+    process.stdout.write(text.toUpperCase()); <span class="hljs-comment">//transform data chunck to uppercase output </span>
+  });
+</code></pre>
+</li>
+<li><p>process.argv parse command-line argument
+  Your nodejs CLI util need parse command-line arguments? use <code>process.argv</code> array or npm yargs package (transfor an object)</p>
+<pre><code class="lang-js">  <span class="hljs-comment">//babel-node args.js -r test.js</span>
+  <span class="hljs-built_in">console</span>.log(process.argv); <span class="hljs-comment">//=[ &apos;node&apos;,&apos;/Users/ycao2/walmart/github/codepath-nodejs/args.js&apos;,&apos;-r&apos;,&apos;test.js&apos; ]</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;yargs&apos;</span>).argv); <span class="hljs-comment">//={_: [], r: &apos;test.js&apos;, &apos;$0&apos;: &apos;args.js&apos;}</span>
+</code></pre>
+</li>
+<li><p>Respond to Signal from background program
+  Make nodejs program repond to single from program that runs in OS background based on the nature that <code>process</code> is an <code>EventEmitter</code> object</p>
+<pre><code class="lang-js">  process.stdin.resume();
+  process.on(<span class="hljs-string">&apos;SIGHUP&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{ <span class="hljs-comment">//listen to signal from other process</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Reloading configuration...&apos;</span>);
+  });
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;PID:&apos;</span>, process.pid);
+</code></pre>
+</li>
+<li><p>progress.exit
+  exit a program with exit code in async</p>
+<pre><code class="lang-js">  process.exit(<span class="hljs-number">0</span>); <span class="hljs-comment">//exit correctly</span>
+  process.exit(<span class="hljs-number">1</span>); <span class="hljs-comment">//exit w error (any code not 0 means error)</span>
+</code></pre>
+</li>
+<li><p>process.nextTick(cb)
+  process.nextTick(cb) is Node.js&apos;s way to delay callback to head of next cycle of run loop, same as <code>setTimout(fn, 0)</code></p>
+<blockquote>
+<p>Node&#x2019;s documentation recommends that APIs should always be 100% asynchronous
+or synchronous. That means if you have a method that accepts a callback and may call it asynchronously, then you should wrap the synchronous case in process.nextTick
+so users can rely on the order of execution.</p>
+</blockquote>
+<pre><code class="lang-js">  <span class="hljs-keyword">var</span> EventEmitter = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;events&apos;</span>).EventEmitter;
+  events = <span class="hljs-keyword">new</span> EventEmitter();
+  process.nextTick(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    events.emit(<span class="hljs-string">&apos;success&apos;</span>);
+  });  
+  events.on(<span class="hljs-string">&quot;success&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{});
+</code></pre>
+</li>
+<li><p>prcess.env</p>
+</li>
+<li>process.arch &amp; process.platform
+  Get OS platform info</li>
+</ul>
+<h3 id="console">Console</h3>
+<p>The easiest way to log node.js info/error, also can use <code>console.time()</code> for benchmarking nodejs function. (More advanced benchmarking <a href="https://www.npmjs.com/package/benchmark" target="_blank">https://www.npmjs.com/package/benchmark</a>)</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> name = <span class="hljs-string">&quot;test&quot;</span>;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;hi %s&quot;</span>, name); <span class="hljs-comment">//formatting placeholder, %s - string, %d - Number, %j-JSON</span>
+</code></pre>
+<h3 id="timer">Timer</h3>
+<ul>
+<li>4 Methods: setTimeout, setInterval, clearTimeout, clearInterval</li>
+<li>JS Timings are not necessarily accurate if you have a long-running cpu blocking task</li>
+<li>in timer method, context this -&gt; global</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-comment">//setTimeout() &amp; clearTimeout(id) - delay a function</span>
+<span class="hljs-keyword">var</span> timeoutId = setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{ <span class="hljs-comment">// run later</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;setTimeout&quot;</span>);
+  clearTimeout(timeoutId); <span class="hljs-comment">//no need</span>
+}, <span class="hljs-number">100</span>);
+<span class="hljs-comment">//setInterval() &amp; clearInterval(intervalId) - repeat function</span>
+<span class="hljs-keyword">var</span> counter = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">var</span> intervalId = setInterval(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;setInterval&quot;</span>);
+  counter++;
+  <span class="hljs-keyword">if</span> (counter &gt; <span class="hljs-number">0</span>) {
+    clearInterval(intervalId);
+  }
+}, <span class="hljs-number">100</span>);
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../core/control-flow.html" class="navigation navigation-prev " aria-label="Previous page: Core - Control Flow &amp; Async Callback"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../core/eventEmitter.html" class="navigation navigation-next " aria-label="Next page: Core - EventEmitter"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-jsbin/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

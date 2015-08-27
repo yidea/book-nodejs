@@ -1,0 +1,418 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>Core - FS | Node.js</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.0.0-beta.1">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+        
+    
+    
+    <link rel="next" href="../core/npm.html" />
+    
+    
+    <link rel="prev" href="../core/stream.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    <div class="book" data-level="1.5" data-basepath=".." data-revision="Thu Aug 27 2015 12:16:41 GMT-0700 (PDT)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="core/index.html">
+            
+                
+                    <a href="../core/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Nodejs Fundamental
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="core/control-flow.html">
+            
+                
+                    <a href="../core/control-flow.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Core - Control Flow &amp; Async Callback
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="core/global.html">
+            
+                
+                    <a href="../core/global.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Core - Global Objects
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="core/eventEmitter.html">
+            
+                
+                    <a href="../core/eventEmitter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Core - EventEmitter
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="core/stream.html">
+            
+                
+                    <a href="../core/stream.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        Core - Stream
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="core/filesystem.html">
+            
+                
+                    <a href="../core/filesystem.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        Core - FS
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="core/npm.html">
+            
+                
+                    <a href="../core/npm.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        NPM
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="Todo.html">
+            
+                
+                    <a href="../Todo.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Todo
+                    </a>
+                
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">Published with GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Share on Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Share on Google</button>
+                <button type="button" data-sharing="facebook" class="button">Share on Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Share on Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Share on Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Node.js</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="fs-file-system">FS - File System</h1>
+<p><a href="https://nodejs.org/api/fs.html" target="_blank">https://nodejs.org/api/fs.html</a></p>
+<p>Node&apos;s FS module can read/write file using async method, but provide sync method</p>
+<p><code>fs</code> module allows:</p>
+<ul>
+<li><a href="http://pubs.opengroup.org/onlinepubs/9699919799/toc.htm" target="_blank">POSIX - Portable Operating System Interface</a> file I/O</li>
+<li>File I/O streaming/watching/bulk</li>
+<li>has both async/sync I/O method (different from net, http module), still need file sync method for require module cases (load config file)</li>
+</ul>
+<h3 id="posix-file-i-o-methods">POSIX file I/O methods</h3>
+<p>POSIX are low-level file API for most common file operations. Missing ones: glob</p>
+<p>Most used</p>
+<ul>
+<li>fs.readdir(path, callback); //read files/folder in a dir not recursively <code>callback(err,filenameArray)</code></li>
+<li>fs.stat(path, callback); //get stat of a file/folder, <code>callback(err, stat) {console.log(stat.isDirectory(), stat.isFile())}</code></li>
+<li>fs.existsSync(path)</li>
+</ul>
+<p>Table of Nodejs all POSIX API: <a href="https://nodejs.org/api/fs.html" target="_blank">https://nodejs.org/api/fs.html</a></p>
+<pre><code>rename(2) fs.rename Changes the name of a file
+truncate(2) fs.truncate Truncates or extends a file to a specified length
+ftruncate(2) fs.ftruncate Same as truncate but takes a file descriptor
+chown(2) fs.chown Changes file owner and group
+fchown(2) fs.fchown Same as chown but takes a file descriptor
+lchown(2) fs.lchown Same as chown but doesn&#x2019;t follow symbolic links
+chmod(2) fs.chmod Changes file permissions
+fchmod(2) fs.fchmod Same as chmod but takes a file descriptor
+lchmod(2) fs.lchmod Same as chmod but doesn&#x2019;t follow symbolic links
+stat(2) fs.stat Gets file status
+lstat(2) fs.lstat Same as stat but returns information about link if
+provided rather than what the link points to
+fstat(2) fs.fstat Same as stat but takes a file descriptor
+link(2) fs.link Makes a hard file link
+symlink(2) fs.symlink Makes a symbolic link to a file
+readlink(2) fs.readlink Reads value of a symbolic link
+realpath(2) fs.realpath Returns the canonicalized absolute pathname
+unlink(2) fs.unlink Removes directory entry
+rmdir(2) fs.rmdir Removes directory
+mkdir(2) fs.mkdir Makes directory
+readdir(2) fs.readdir Reads contents of a directory
+close(2) fs.close Deletes a file descriptor
+open(2) fs.open Opens or creates a file for reading or writing
+utimes(2) fs.utimes Sets file access and modification times
+futimes(2) fs.futimes Same as utimes but takes a file descriptor
+fsync(2) fs.fsync Synchronizes file data with disk
+write(2) fs.write Writes data to a file
+read(2) fs.read Reads data from a file
+</code></pre><h3 id="file-streaming-api">File Streaming API</h3>
+<p>File stream API:</p>
+<ul>
+<li><code>fs.createReadStream</code> 
+  -<code>fs.createWtriteStream</code> 
+  can connect to other streams with pipe
+  Good for when you want deal with a piece of data at a time and chain data source, for large file</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-comment">//copy file A to B</span>
+copyFile(<span class="hljs-string">&quot;./package.json&quot;</span>, <span class="hljs-string">&quot;./test/copy.json&quot;</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">copyFile</span> <span class="hljs-params">(filenameA, filenameB)</span> </span>{
+  <span class="hljs-keyword">let</span> readable = fs.createReadStream(filenameA);
+  <span class="hljs-keyword">let</span> writeable = fs.createWriteStream(filenameB);
+  readable.pipe(writeable); <span class="hljs-comment">//data pipe to writable stream, write piece by piece</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;copied %s %s&quot;</span>, filenameA, filenameB);
+}
+</code></pre>
+<h3 id="file-bulk-api-use-buffer">File Bulk API (use Buffer)</h3>
+<p>File Bulk API (Async):</p>
+<ul>
+<li><code>fs.readFile</code></li>
+<li><code>fs.writeFile</code></li>
+<li><code>fs.appendFile</code>
+  Good for when you want to load file(small file) into memory (using buffer) or write out data completely instead of piece (stream)</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+<span class="hljs-keyword">let</span> Promise = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;songbird&quot;</span>);
+fs.promise.readFile(<span class="hljs-string">&quot;./package.json&quot;</span>, <span class="hljs-string">&quot;utf8&quot;</span>)
+  .then(<span class="hljs-built_in">JSON</span>.parse)
+  .then((data) =&gt; {
+    <span class="hljs-comment">//console.log(data);</span>
+  })
+  .catch((err) =&gt; { <span class="hljs-built_in">console</span>.log(err);});
+</code></pre>
+<h3 id="file-watching-api">File Watching API</h3>
+<p>File Watching API:</p>
+<ul>
+<li><code>fs.watch</code>: efficient for internal file system, not work well w network drives</li>
+<li><code>fs.watchFile</code>: less-efficient but work for network drives</li>
+</ul>
+<h3 id="file-sync-api">File Sync API</h3>
+<p>Good for load config file or module (require), better than async in this case</p>
+<ul>
+<li>readFileSync</li>
+<li>readdirSync</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-comment">//read config.json on program startup w fs.readFileSync() you can change the config </span>
+<span class="hljs-keyword">var</span> config = <span class="hljs-built_in">JSON</span>.parse(fs.readFileSync(<span class="hljs-string">&apos;./config.json&apos;</span>).toString());
+<span class="hljs-comment">//when you are not going to change config use var confi = requrie(&quot;./config.json&quot;) - cached singleton</span>
+doThisThing(config);
+</code></pre>
+<h3 id="recursive-file-operation">Recursive File operation</h3>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../core/stream.html" class="navigation navigation-prev " aria-label="Previous page: Core - Stream"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../core/npm.html" class="navigation navigation-next " aria-label="Next page: NPM"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-jsbin/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
