@@ -1,4 +1,4 @@
-# Node.js Essential
+# Node.js Essential (Gitbook)
 
 While coding and learning Node.js, always want to document what I learned and contribute back to community. Node.js Essential is published w Gitbook for free. 
 
