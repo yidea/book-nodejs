@@ -1,6 +1,6 @@
-# Node.js 
+# Node.js Essential
 
-Based on learning notes from book "Node.js in Practice"
+While coding and learning Node.js, always want to document what I learned and contribute back to community. Node.js Essential is published w Gitbook for free. 
 
 ### Node.js Intro
 - built on V8 - Chrome’s JavaScript runtime for easily building fast, scalable app
